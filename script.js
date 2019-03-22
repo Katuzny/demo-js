@@ -32,3 +32,25 @@ function removeHTML (idCible) {
 	htmltableau.innerHTML = "";
 }
 
+function combientableau(){
+	var tableau = prompt('combien de tableau?');
+	var content = "";
+	for(var i=0; i < tableau; i++){
+		content += '<input type="number" name="nombre';
+		content += i+1;
+		content += '" value="1" min="1" max="3">';
+		content += '<button onclick="afficheHTML(';
+		content += i+1;
+		content += ')">add</button><button onclick="removeHTML(';
+		content += i+1;
+		content +=')">remove</button>'; 
+		content += "<table>"; 
+		content += '<tbody id="tableau'
+		content += i+1;
+		content += '"></tbody>';
+		content += "</table>";
+	}
+	document.body.innerHTML = content + document.body.innerHTML;
+}
+
+combientableau();
