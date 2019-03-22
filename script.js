@@ -1,24 +1,21 @@
 
-function numberSelect(){
-	var nombre = document.getElementsByName("nombre")[0].value;
+function numberSelect(idCible){
+	var nombre = document.getElementsByName("nombre"+idCible)[0].value;
 	return nombre;
 }
 
-function creeTableau() {
-	var number = numberSelect();
+function creeTableau(number) {
 	var tableau = [];
 	for (var i = 0 ; i < number ; i++) {
 		var nom = prompt("nom du joueur "+ (i+1) + " ?");
-		if (nom == null)
-
 		tableau.push(nom +" (" + (i+1)+")");
 	}
 	return tableau;
 }
  
-function afficheHTML (){
-	var htmltableau = document.getElementById("tableau");
-	var tableau = creeTableau();
+function afficheHTML (idCible){
+	var htmltableau = document.getElementById("tableau" + idCible);
+	var tableau = creeTableau(numberSelect(idCible));
 	var content = "";
 	for(var i=0; i < tableau.length ; i++){
 		content += "<tr><td>";
@@ -27,12 +24,11 @@ function afficheHTML (){
 		content += tableau[i];
 		content += "</td></tr>";
 	}
-
 	htmltableau.innerHTML = content;
 } 
 
-function removeHTML () {
-	var htmltableau = document.getElementById("tableau");
+function removeHTML (idCible) {
+	var htmltableau = document.getElementById("tableau" +idCible);
 	htmltableau.innerHTML = "";
 }
 
