@@ -17,16 +17,91 @@ function creeTableau(number) {
  
 function afficheHTML (idCible){
 	var htmltableau = document.getElementById("tableau" + idCible);
+	//va chercher l'element tbody avec id tableau1
 	var tableau = creeTableau(numberSelect(idCible));
+	//var tableau = ["coucou1", "coucou2", "coucou3"];
 	var content = "";
+	//variable vide en attente de remplissage
+	//pour 0; si inferieur a 3; 0+1 (i = i + 1 ou i += 1 ou i++) faire
 	for(var i=0; i < tableau.length ; i++){
+		//i=0 content = ""
 		content += "<tr><td>";
-		content += i+1; 
-		content += "</td><td>"; 
+			// content = "<tr><td>"
+			//
+		content += i+1;
+			// content = content + (0 + 1)
+			// content = "<tr><td>" + (0 + 1)
+			// content =  "<tr><td>1"
+		content += "</td><td>";
+			// content = content + "</td><td>"
+			// content = "<tr><td>1" + "</td><td>"
+			// content = "<tr><td>1</td><td>"
 		content += tableau[i];
+			// content = content + tableau[i]
+			// content = "<tr><td>1</td><td>" + tableau[0]
+			// content = "<tr><td>1</td><td>" + "coucou1"
+			// content = "<tr><td>1</td><td>coucou1"
 		content += "</td></tr>";
+			// content = content + "</td></tr>"
+			// content = "<tr><td>1</td><td>coucou1" + "</td></tr>"
+				// //i=0 content = "<tr><td>1</td><td>coucou1</td></tr>"	
+			 //    // i++
+			 //    //pour 1; si inferieur a 3 i++
+			 //    //i=1
+			 //    //content = "<tr><td>1</td><td>coucou1</td></tr>"
+			 //    content += "<tr><td>";
+				// 	// content = content + "<tr><td>"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr>" + "<tr><td>"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>"
+				// content += i+1;
+				// 	// content = content + (i+1)
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>" + (1 + 1)
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2" 
+				// content += "</td><td>";
+				// 	// content = content + "</td><td>" 
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2" + "</td><td>"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>"
+				// content += tableau[i];
+				// 	// content = content + tableau[i]
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>" + tableau[1]
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>" + "coucou2"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2"
+				// content += "</td></tr>";
+				// 	// content = content + "</td></tr>"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2" + "</td></tr>"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr>"
+				// 	//i++
+				// 	//pour 2; si inferieur a 3;
+				// 	// i = 2
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr>"
+				// 		content += "<tr><td>";
+				// 	// content = content + "<tr><td>"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr>"  + "<tr><td>"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>"
+				// content += i+1;
+				// 	// content = content + (i+1)
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>" + (2 +1)
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>3"
+				// content += "</td><td>";
+				// 	// content = content + "</td><td>"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>3" + "</td><td>"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>3</td><td>"
+				// content += tableau[i];
+				// 	// content = content + tableau[i]
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>3</td><td>" + tableau[2]
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>3</td><td>" + "coucou3"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>3</td><td>coucou3"
+				// content += "</td></tr>";
+				// 	// content = content + "</td></tr>"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>3</td><td>coucou3" + "</td></tr>"
+				// 	// content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>3</td><td>coucou3</td></tr>"
+				// 	// i++ = 3	
+				// 	////pour 3; si inferieur a 3;
 	}
+	 //content = "<tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>3</td><td>coucou3</td></tr>"
 	htmltableau.innerHTML = content;
+	//<tbody id="tableau1"> content </tbody>
+	//<tbody id="tableau1"><tr><td>1</td><td>coucou1</td></tr><tr><td>2</td><td>coucou2</td></tr><tr><td>3</td><td>coucou3</td></tr></tbody>
 } 
 
 function removeHTML (idCible) {
@@ -36,7 +111,8 @@ function removeHTML (idCible) {
 
 function removetableau() {
 	var tableaux = document.getElementsByClassName("tableau");
-	document.body.removeChild(tableaux[tableaux.length-1]); 
+	var tailletableau = tableaux.length; 
+	document.body.removeChild(tableaux[tailletableau - 1]); 
 }
 
 function removeHTMLensemble(cible) {
@@ -66,4 +142,38 @@ function combienTableau(){
 }
 
 
-combienTableau();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
