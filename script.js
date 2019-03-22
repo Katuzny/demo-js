@@ -1,4 +1,6 @@
-
+/***
+* recupère valeur du input nombre+id
+***/
 function numberSelect(idCible){
 	var nombre = document.getElementsByName("nombre"+idCible)[0].value;
 	return nombre;
@@ -37,6 +39,10 @@ function removetableau() {
 	document.body.removeChild(tableaux[tableaux.length-1]); 
 }
 
+function removeHTMLensemble(cible) {
+	document.body.removeChild(cible.parentNode);
+}
+
 function combienTableau(){
 	var tableau = prompt('combien de tableau?');
 	var content = "";
@@ -48,7 +54,8 @@ function combienTableau(){
 		content += i+1;
 		content += ')">add</button><button onclick="removeHTML(';
 		content += i+1;
-		content +=')">remove</button>'; 
+		content +=')">remove</button>';
+		content += '<button onclick="removeHTMLensemble(this)">supprime cet ensemble</button>';  
 		content += "<table>"; 
 		content += '<tbody id="tableau'
 		content += i+1;
@@ -57,5 +64,6 @@ function combienTableau(){
 	}
 	document.body.innerHTML = content + document.body.innerHTML;
 }
+
 
 combienTableau();
