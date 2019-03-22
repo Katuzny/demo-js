@@ -32,11 +32,16 @@ function removeHTML (idCible) {
 	htmltableau.innerHTML = "";
 }
 
-function combientableau(){
+function removetableau() {
+	var tableaux = document.getElementsByClassName("tableau");
+	document.body.removeChild(tableaux[tableaux.length-1]); 
+}
+
+function combienTableau(){
 	var tableau = prompt('combien de tableau?');
 	var content = "";
 	for(var i=0; i < tableau; i++){
-		content += '<input type="number" name="nombre';
+		content += '<div class="tableau"><input type="number" name="nombre';
 		content += i+1;
 		content += '" value="1" min="1" max="3">';
 		content += '<button onclick="afficheHTML(';
@@ -48,9 +53,9 @@ function combientableau(){
 		content += '<tbody id="tableau'
 		content += i+1;
 		content += '"></tbody>';
-		content += "</table>";
+		content += "</table></div>";
 	}
 	document.body.innerHTML = content + document.body.innerHTML;
 }
 
-combientableau();
+combienTableau();
